@@ -11,7 +11,7 @@ export default function Page() {
   return (
     <>
       <Nav />
-      <main className="pt-16">
+      <main>
         <Hero />
         <HowItWorks />
         <Pricing />

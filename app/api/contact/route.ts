@@ -59,7 +59,7 @@ export async function POST(req: Request) {
   }
 
   const html = `
-    <h2>New Veil Optics order request</h2>
+    <h2>New ModsByMail order request</h2>
     <table cellpadding="6" cellspacing="0" style="border-collapse:collapse;font-family:system-ui,sans-serif;font-size:14px">
       <tr><td><strong>Name</strong></td><td>${escapeHtml(name)}</td></tr>
       <tr><td><strong>Email</strong></td><td>${escapeHtml(email)}</td></tr>

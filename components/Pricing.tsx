@@ -2,34 +2,50 @@ import { SectionHeading } from "./HowItWorks";
 
 const tiers = [
   {
-    name: "Standard",
+    name: "STANDARD",
     price: "$149",
-    cadence: "per pair",
+    cadence: "per pair!!",
     blurb:
-      "Hand-finished concealment with insured round-trip shipping. The right choice for almost everyone.",
+      "The regular deal!! 5 day turnaround, insured shipping both ways, and our LIFETIME warranty!!",
     features: [
-      "Five business-day turnaround",
-      "Insured round-trip shipping",
-      "Before / after photo documentation",
+      "5 business day turnaround",
+      "Insured shipping (BOTH WAYS)",
+      "Photos before AND after",
       "Lifetime workmanship warranty",
     ],
-    cta: "Start a Standard order",
-    featured: false,
+    bg: "#00ffff",
+    accent: "#ff00ff",
   },
   {
-    name: "Expedited",
+    name: "EXPEDITED!!",
     price: "$219",
-    cadence: "per pair",
+    cadence: "per pair!!",
     blurb:
-      "Front-of-queue handling and overnight return shipping for travelers and creators on a deadline.",
+      "Need em FAST?? We jump you to the front of the line and ship em back OVERNIGHT!! ★",
     features: [
-      "48-hour turnaround on receipt",
-      "Overnight insured return",
+      "48 HOUR turnaround",
+      "Overnight return shipping",
       "Priority status updates",
       "Everything in Standard",
     ],
-    cta: "Start an Expedited order",
+    bg: "#ff00ff",
+    accent: "#ffff00",
     featured: true,
+  },
+  {
+    name: "KC LOCAL",
+    price: "$129",
+    cadence: "Hand Delivered!!",
+    blurb:
+      "If you're in the Kansas City metro we will COME TO YOU!! No shipping needed!! Cheapest option!!",
+    features: [
+      "FREE pickup in KC metro",
+      "FREE drop-off when done",
+      "Same week turnaround",
+      "Cash, Venmo, or PayPal OK",
+    ],
+    bg: "#00ff00",
+    accent: "#0000ff",
   },
 ];
 
@@ -37,93 +53,91 @@ export function Pricing() {
   return (
     <section
       id="pricing"
-      className="border-b border-bone-100/[0.06] py-28 sm:py-36"
+      className="bevel-ridge p-4 sm:p-6"
+      style={{ background: "#800080", borderColor: "#ffff00" }}
     >
-      <div className="container-page">
-        <SectionHeading
-          eyebrow="Pricing"
-          title="One service, two speeds."
-          lede="Flat-rate pricing with no surprise add-ons. We do not charge until your frames have been received and inspected."
-        />
-
-        <div className="mt-16 grid gap-6 lg:grid-cols-2">
-          {tiers.map((t) => (
-            <div
-              key={t.name}
-              className={[
-                "relative flex flex-col rounded-2xl border p-8 sm:p-10",
-                t.featured
-                  ? "border-champagne-500/40 bg-gradient-to-b from-champagne-500/[0.06] to-transparent"
-                  : "border-bone-100/[0.08] bg-ink-900",
-              ].join(" ")}
-            >
-              {t.featured ? (
-                <span className="absolute right-6 top-6 rounded-full border border-champagne-500/40 bg-champagne-500/10 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-champagne-300">
-                  Most chosen
-                </span>
-              ) : null}
-
-              <h3 className="font-display text-2xl text-bone-50">{t.name}</h3>
-              <div className="mt-4 flex items-end gap-2">
-                <span className="font-display text-5xl text-bone-50">
-                  {t.price}
-                </span>
-                <span className="pb-2 text-sm text-bone-400">{t.cadence}</span>
-              </div>
-              <p className="mt-4 text-sm leading-relaxed text-bone-300">
-                {t.blurb}
-              </p>
-
-              <ul className="mt-8 space-y-3 text-sm text-bone-200">
-                {t.features.map((f) => (
-                  <li key={f} className="flex items-start gap-3">
-                    <Check />
-                    <span>{f}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href="#order"
-                className={[
-                  "mt-10 inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium transition",
-                  t.featured
-                    ? "bg-champagne-500 text-ink-950 hover:bg-champagne-400"
-                    : "border border-bone-100/15 text-bone-100 hover:border-bone-100/30",
-                ].join(" ")}
-              >
-                {t.cta}
-              </a>
-            </div>
-          ))}
-        </div>
-
-        <p className="mt-8 text-sm text-bone-400">
-          Compatible with Ray-Ban Meta (Wayfarer and Headliner) and Ray-Ban
-          Stories. Other models — ask before ordering.
-        </p>
-      </div>
-    </section>
-  );
-}
-
-function Check() {
-  return (
-    <svg
-      width="18"
-      height="18"
-      viewBox="0 0 18 18"
-      fill="none"
-      className="mt-0.5 shrink-0 text-champagne-400"
-      aria-hidden
-    >
-      <path
-        d="M3.75 9.5l3.25 3.25 7.25-8"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+      <SectionHeading
+        eyebrow="$$ MONEY TIME $$"
+        title="OUR PRICES!!"
+        lede="No hidden fees!! No surprises!! We don't charge you ONE PENNY until your frames get here safe!!"
+        eyebrowColor="#00ff00"
+        titleColor="#ffff00"
       />
-    </svg>
+
+      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {tiers.map((t) => (
+          <div
+            key={t.name}
+            className="bevel-out relative p-4 sm:p-6"
+            style={{ background: t.bg, borderColor: t.accent }}
+          >
+            {t.featured ? (
+              <div
+                className="bevel-out impact blink absolute -right-2 -top-3 px-3 py-1 text-sm"
+                style={{ background: "#ff0000", color: "#ffff00" }}
+              >
+                ★ MOST POPULAR!! ★
+              </div>
+            ) : null}
+
+            <h3
+              className="impact text-2xl sm:text-3xl"
+              style={{ color: t.accent }}
+            >
+              {t.name}
+            </h3>
+            <div
+              className="wordart mt-2 text-5xl sm:text-6xl"
+              style={{ color: "#000080" }}
+            >
+              {t.price}
+            </div>
+            <div
+              className="comic text-base"
+              style={{ color: "#ff0000" }}
+            >
+              {t.cadence}
+            </div>
+
+            <p
+              className="comic mt-3 text-sm sm:text-base"
+              style={{ color: "#000" }}
+            >
+              {t.blurb}
+            </p>
+
+            <ul className="comic mt-4 space-y-2 text-sm" style={{ color: "#000" }}>
+              {t.features.map((f) => (
+                <li key={f} className="flex items-start gap-2">
+                  <span
+                    className="impact"
+                    style={{ color: "#ff0000" }}
+                  >
+                    ✓
+                  </span>
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href="#order"
+              className="bevel-out impact mt-5 inline-block px-5 py-2 text-base no-underline"
+              style={{ background: "#ffff00", color: "#000" }}
+            >
+              ORDER {t.name}!
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <p
+        className="comic mt-6 text-center text-xs sm:text-sm"
+        style={{ color: "#ffff00" }}
+      >
+        Compatible with Ray-Ban Meta (Wayfarer + Headliner) and Ray-Ban
+        Stories!! Got something else?? E-mail us first!!
+      </p>
+    </section>
   );
 }

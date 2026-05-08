@@ -1,64 +1,122 @@
+import { Marquee } from "./Marquee";
+
 export function Hero() {
   return (
-    <section
-      id="top"
-      className="relative overflow-hidden border-b border-bone-100/[0.06] grain"
-    >
-      <div
-        className="pointer-events-none absolute inset-0 -z-10"
-        aria-hidden
-        style={{
-          background:
-            "radial-gradient(60% 50% at 50% 0%, rgba(200,169,126,0.10) 0%, rgba(200,169,126,0) 70%), radial-gradient(40% 35% at 80% 30%, rgba(200,169,126,0.06), transparent 70%)",
-        }}
-      />
-      <div className="container-page relative pt-36 pb-28 sm:pt-44 sm:pb-36">
-        <div className="flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-champagne-500">
-          <span className="h-px w-8 bg-champagne-500/60" />
-          A specialist mail-in service
-        </div>
+    <section id="top">
+      <Marquee>
+        <span>
+          ★★★ WELCOME TO MODSBYMAIL.COM ★★★ NOW ACCEPTING ORDERS!! ★★★ HAND
+          DELIVERY IN KANSAS CITY!! ★★★ TELL YOUR FRIENDS!!! ★★★ SIGN OUR
+          GUESTBOOK!! ★★★&nbsp;&nbsp;&nbsp;
+        </span>
+      </Marquee>
 
-        <h1 className="mt-6 max-w-4xl font-display text-5xl font-light leading-[1.02] tracking-tightest text-bone-50 text-balance sm:text-6xl md:text-7xl">
-          The cleanest way to conceal the recording light on your{" "}
-          <span className="text-champagne-400">Ray-Ban Meta</span> glasses.
+      <div
+        className="bevel-out p-6 text-center sm:p-10"
+        style={{ background: "#ff00ff", borderColor: "#ffff00" }}
+      >
+        <h1
+          className="wordart rainbow-text text-4xl leading-none sm:text-6xl md:text-7xl"
+          style={{ textShadow: "3px 3px 0 #000" }}
+        >
+          M*O*D*S*B*Y*M*A*I*L
         </h1>
 
-        <p className="mt-7 max-w-2xl text-lg leading-relaxed text-bone-300 text-balance">
-          Mail your frames in. We perform a precision mod by hand and return them
-          to you within five business days — looking factory and feeling
-          identical to the day they shipped.
+        <p
+          className="comic mt-4 text-lg font-bold sm:text-2xl"
+          style={{ color: "#ffff00" }}
+        >
+          ~~~ The #1 Spot On The Web To Hide That Annoying LED!! ~~~
         </p>
 
-        <div className="mt-10 flex flex-wrap items-center gap-4">
+        <p
+          className="comic mt-2 text-base sm:text-lg"
+          style={{ color: "#ffffff" }}
+        >
+          You mail us your Ray-Ban Meta glasses. We hide the recording light.
+          We mail them back. <span className="blink">EASY!!</span>
+        </p>
+
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
           <a
             href="#order"
-            className="inline-flex items-center justify-center rounded-full bg-champagne-500 px-6 py-3 text-sm font-medium text-ink-950 transition hover:bg-champagne-400"
+            className="bevel-out impact px-6 py-3 text-2xl no-underline blink"
+            style={{ background: "#00ff00", color: "#000" }}
           >
-            Start an order
+            CLICK HERE TO ORDER!!!
           </a>
           <a
             href="#process"
-            className="inline-flex items-center justify-center rounded-full border border-bone-100/15 px-6 py-3 text-sm font-medium text-bone-100 transition hover:border-bone-100/30 hover:text-bone-50"
+            className="bevel-out comic px-4 py-3 text-base no-underline"
+            style={{ background: "#00ffff", color: "#000" }}
           >
-            See the process
+            How does it work??
           </a>
         </div>
 
-        <dl className="mt-20 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-4">
-          {[
-            ["5 days", "Typical turnaround"],
-            ["Lifetime", "Workmanship warranty"],
-            ["Insured", "Round-trip shipping"],
-            ["By hand", "Performed in-house"],
-          ].map(([k, v]) => (
-            <div key={v} className="border-l border-bone-100/10 pl-4">
-              <dt className="font-display text-2xl text-bone-50">{k}</dt>
-              <dd className="mt-1 text-xs uppercase tracking-wider text-bone-400">
-                {v}
-              </dd>
+        <div
+          className="bevel-in mt-6 inline-block px-4 py-2 text-base"
+          style={{ background: "#000", color: "#00ff00" }}
+        >
+          <span className="courier">★ KANSAS CITY METRO?</span>{" "}
+          <span className="courier blink" style={{ color: "#ff00ff" }}>
+            WE HAND DELIVER!!
+          </span>
+        </div>
+      </div>
+
+      <div
+        className="construction-stripes p-4 text-center"
+        aria-hidden
+      >
+        <div
+          className="bevel-out impact inline-block px-4 py-2 text-lg"
+          style={{ background: "#ffff00", color: "#000" }}
+        >
+          🚧 UNDER CONSTRUCTION 🚧 PARDON OUR DUST!! 🚧
+        </div>
+      </div>
+
+      <div
+        className="bevel-in mx-auto my-4 grid max-w-3xl grid-cols-2 gap-2 p-4 text-center sm:grid-cols-4"
+        style={{ background: "#ffff00" }}
+      >
+        {[
+          ["5 DAYS!!", "Turnaround"],
+          ["LIFETIME", "Warranty!!"],
+          ["INSURED", "Shipping!!"],
+          ["BY HAND", "(no robots!)"],
+        ].map(([k, v]) => (
+          <div
+            key={v}
+            className="bevel-out p-2"
+            style={{ background: "#fff" }}
+          >
+            <div
+              className="impact text-lg"
+              style={{ color: "#ff0000" }}
+            >
+              {k}
             </div>
-          ))}
-        </dl>
+            <div className="comic text-xs" style={{ color: "#000080" }}>
+              {v}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div
+        className="comic mx-auto max-w-3xl text-center text-sm"
+        style={{ color: "#ffff00" }}
+      >
+        Visitor #&nbsp;
+        <span
+          className="bevel-in courier inline-block px-2 py-1"
+          style={{ background: "#000", color: "#00ff00" }}
+        >
+          0 0 0 4 2 0 6 9
+        </span>
+        &nbsp; ★ Last updated: 5/7/2026 ★
       </div>
     </section>
   );

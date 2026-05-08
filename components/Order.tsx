@@ -5,63 +5,84 @@ export function Order() {
   return (
     <section
       id="order"
-      className="border-b border-bone-100/[0.06] py-28 sm:py-36"
+      className="bevel-ridge p-4 sm:p-6"
+      style={{ background: "#0000ff", borderColor: "#00ff00" }}
     >
-      <div className="container-page grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
-        <div>
-          <SectionHeading
-            eyebrow="Start an order"
-            title="Tell us about your frames."
-            lede="Submit the details below. We'll confirm fit, send a prepaid label, and walk you through how to pack your glasses safely."
-          />
+      <SectionHeading
+        eyebrow="!! READY TO ORDER !!"
+        title="START AN ORDER!!"
+        lede="Fill out the form!! We e-mail back within 1 business day with a pre-paid label!!"
+        eyebrowColor="#ffff00"
+        titleColor="#00ffff"
+        ledeColor="#ffffff"
+      />
 
-          <div className="mt-12 space-y-6 border-t border-bone-100/[0.08] pt-8 text-sm text-bone-300">
-            <ContactItem
-              label="Email"
-              value="orders@veiloptics.com"
-              href="mailto:orders@veiloptics.com"
-            />
-            <ContactItem
-              label="Hours"
-              value="Mon – Fri, 9am – 6pm ET"
-            />
-            <ContactItem
-              label="Workshop"
-              value="By appointment only"
-            />
+      <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_1.2fr]">
+        <div
+          className="bevel-out p-4"
+          style={{ background: "#ffff00" }}
+        >
+          <h3
+            className="impact text-2xl"
+            style={{ color: "#ff0000" }}
+          >
+            ★ CONTACT INFO ★
+          </h3>
+          <hr />
+          <ul
+            className="comic space-y-3 text-sm sm:text-base"
+            style={{ color: "#000080" }}
+          >
+            <li>
+              <strong>E-MAIL:</strong>{" "}
+              <a href="mailto:orders@modsbymail.com">
+                orders@modsbymail.com
+              </a>
+            </li>
+            <li>
+              <strong>HOURS:</strong> Mon-Fri, 9am-6pm CST
+            </li>
+            <li>
+              <strong>WORKSHOP:</strong> Kansas City, MO (by appt!!)
+            </li>
+          </ul>
+
+          <hr />
+
+          <div
+            className="bevel-in mt-3 p-3"
+            style={{ background: "#00ff00" }}
+          >
+            <div
+              className="impact blink text-base"
+              style={{ color: "#ff0000" }}
+            >
+              ★★ KC METRO?? ★★
+            </div>
+            <p
+              className="comic mt-2 text-sm"
+              style={{ color: "#000" }}
+            >
+              We will <span className="blink"><strong>HAND DELIVER</strong></span>{" "}
+              to anyone in the Kansas City metro area for FREE!! No shipping
+              required, just pick &quot;KC Local&quot; in the form!!
+            </p>
+          </div>
+
+          <hr />
+
+          <div className="mt-3 text-center">
+            <span
+              className="bevel-out comic inline-block px-3 py-1 text-xs"
+              style={{ background: "#ff00ff", color: "#fff" }}
+            >
+              ✉ Mail us anytime!!
+            </span>
           </div>
         </div>
 
         <ContactForm />
       </div>
     </section>
-  );
-}
-
-function ContactItem({
-  label,
-  value,
-  href,
-}: {
-  label: string;
-  value: string;
-  href?: string;
-}) {
-  return (
-    <div className="flex items-start justify-between gap-6">
-      <span className="text-xs uppercase tracking-[0.14em] text-bone-400">
-        {label}
-      </span>
-      {href ? (
-        <a
-          href={href}
-          className="text-right text-sm text-bone-100 transition hover:text-champagne-300"
-        >
-          {value}
-        </a>
-      ) : (
-        <span className="text-right text-sm text-bone-100">{value}</span>
-      )}
-    </div>
   );
 }
