@@ -1,45 +1,72 @@
 "use client";
 
 import Link from "next/link";
-import { Logo } from "./Logo";
+import { Coin, Heart } from "./Sprites";
 
 const links = [
-  { href: "#top", label: "HOME", color: "#ff00ff" },
-  { href: "#process", label: "How It Works", color: "#00ffff" },
-  { href: "#pricing", label: "$$ PRICES $$", color: "#00ff00" },
-  { href: "#reviews", label: "Guestbook", color: "#ffff00" },
-  { href: "#faq", label: "F.A.Q.", color: "#ff8800" },
-  { href: "#order", label: "ORDER NOW!!", color: "#ff0000" },
+  { href: "#process", label: "STAGES" },
+  { href: "#pricing", label: "POWER-UPS" },
+  { href: "#reviews", label: "PLAYERS" },
+  { href: "#faq", label: "F.A.Q." },
 ];
 
 export function Nav() {
   return (
-    <header
-      className="bevel-ridge"
-      style={{ background: "#c0c0c0", borderColor: "#ff00ff" }}
-    >
-      <div className="flex flex-col items-center gap-3 px-4 py-4">
-        <Link href="#top" className="block">
-          <Logo />
-        </Link>
+    <header className="sticky top-0 z-50 border-b-4 border-black bg-black">
+      <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+        {/* HUD: Mario | World | Coins | Time */}
+        <div className="flex flex-wrap items-center gap-4 sm:gap-6 font-pixel text-[10px] text-white sm:text-xs">
+          <HudItem label="WORLD" value="1-1" />
+          <HudItem
+            label={
+              <span className="inline-flex items-center gap-1">
+                <Coin size={14} />
+                <span>x</span>
+              </span>
+            }
+            value="99"
+          />
+          <HudItem
+            label={
+              <span className="inline-flex items-center gap-1">
+                <Heart size={16} />
+              </span>
+            }
+            value="03"
+          />
+          <HudItem label="TIME" value="999" />
+        </div>
 
-        <nav className="flex flex-wrap items-center justify-center gap-2">
+        <nav className="flex flex-wrap items-center gap-2">
           {links.map((l) => (
-            <a
+            <Link
               key={l.href}
               href={l.href}
-              className="bevel-out comic px-3 py-2 text-sm font-bold no-underline"
-              style={{ background: l.color, color: "#000" }}
+              className="font-pixel text-[10px] text-white hover:text-[#fcd000] sm:text-xs"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
+          <Link href="#order" className="pixel-btn pixel-btn-red text-[10px] sm:text-xs">
+            START
+          </Link>
         </nav>
-
-        <div className="comic text-center text-xs" style={{ color: "#000080" }}>
-          ~~ Best viewed in Internet Explorer 6 at 800x600 ~~
-        </div>
       </div>
     </header>
+  );
+}
+
+function HudItem({
+  label,
+  value,
+}: {
+  label: React.ReactNode;
+  value: string;
+}) {
+  return (
+    <div className="flex flex-col leading-tight">
+      <span className="text-[#bcbcbc]">{label}</span>
+      <span className="text-white">{value}</span>
+    </div>
   );
 }

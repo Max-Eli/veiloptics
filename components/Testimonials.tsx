@@ -1,90 +1,58 @@
 import { SectionHeading } from "./HowItWorks";
+import { Mario, Goomba, Mushroom } from "./Sprites";
 
 const reviews = [
   {
     quote:
-      "OMG!! These guys were SO FAST!! My glasses came back lookin BRAND NEW and I cant even tell where the LED was!! 5 STARS!!!! ★★★★★",
-    name: "~ Daniel R. ~",
+      "Returned looking factory. I genuinely cannot tell where the work was done — and the packaging coming back was nicer than the box from the store.",
+    name: "DANIEL R.",
     role: "Brooklyn, NY",
-    bg: "#ffff00",
-    color: "#ff0000",
-    font: "comic",
+    sprite: <Mario size={48} />,
   },
   {
     quote:
-      "I was nervous about mailing my $300 glasses but they sent me a tracking number AND photos!! Came back perfect. Would order again!! :)",
-    name: "<<Priya N.>>",
+      "Photo confirmation on intake, a tracking number the same day, and a follow-up after return. Boutique-grade service from a one-person shop.",
+    name: "PRIYA N.",
     role: "Austin, TX",
-    bg: "#00ffff",
-    color: "#000080",
-    font: "times",
+    sprite: <Mushroom size={48} />,
   },
   {
     quote:
-      "Hand delivery in KC was awesome!! Met him at a coffee shop in Westport, took 4 days, no shipping fees. Highly recommend!!!",
-    name: "*Marcus T.*",
+      "Hand delivery in KC was the move. Met him at a coffee shop in Westport, four days door-to-door, no shipping fees.",
+    name: "MARCUS T.",
     role: "Kansas City, MO",
-    bg: "#00ff00",
-    color: "#800080",
-    font: "courier",
+    sprite: <Goomba size={48} />,
   },
 ];
 
 export function Testimonials() {
   return (
-    <section
-      id="reviews"
-      className="bevel-ridge p-4 sm:p-6"
-      style={{ background: "#ff8800", borderColor: "#00ffff" }}
-    >
-      <SectionHeading
-        eyebrow="~ ~ ~ FROM THE GUESTBOOK ~ ~ ~"
-        title="HAPPY CUSTOMERS!!"
-        lede="Read what people are saying!! Sign the guestbook below after you order!!"
-        eyebrowColor="#0000ff"
-        titleColor="#ffff00"
-        ledeColor="#ffffff"
-      />
+    <section id="reviews" className="cloud-sky scanlines">
+      <div className="mx-auto max-w-6xl px-4 py-16">
+        <SectionHeading
+          eyebrow="HIGH SCORES"
+          title="WHAT PLAYERS SAY"
+          lede="Selected dialogue from completed orders. Names shortened at the customer's request."
+        />
 
-      <div className="mt-6 grid gap-4 md:grid-cols-3">
-        {reviews.map((r) => (
-          <figure
-            key={r.name}
-            className="bevel-out p-4"
-            style={{ background: r.bg }}
-          >
-            <div
-              className="impact text-base"
-              style={{ color: r.color }}
-            >
-              ★★★★★
-            </div>
-            <blockquote
-              className={`${r.font} mt-2 text-sm sm:text-base`}
-              style={{ color: r.color }}
-            >
-              &ldquo;{r.quote}&rdquo;
-            </blockquote>
-            <figcaption
-              className="bevel-in mt-3 p-2 text-xs"
-              style={{ background: "#fff", color: "#000" }}
-            >
-              <div className={`${r.font} font-bold`}>{r.name}</div>
-              <div className="comic" style={{ color: "#0000ff" }}>
-                {r.role}
-              </div>
-            </figcaption>
-          </figure>
-        ))}
-      </div>
-
-      <div className="mt-6 text-center">
-        <span
-          className="bevel-in courier inline-block px-3 py-1 text-xs"
-          style={{ background: "#000", color: "#ffff00" }}
-        >
-          ✉ guestbook@modsbymail.com
-        </span>
+        <div className="mt-12 grid gap-8 md:grid-cols-3">
+          {reviews.map((r) => (
+            <figure key={r.name} className="pixel-frame relative p-5">
+              <div className="absolute -top-6 -left-2">{r.sprite}</div>
+              <blockquote className="font-terminal mt-6 text-lg leading-snug text-black">
+                &ldquo;{r.quote}&rdquo;
+              </blockquote>
+              <figcaption className="mt-5 border-t-4 border-black pt-3">
+                <div className="font-pixel text-[10px] text-black">
+                  {r.name}
+                </div>
+                <div className="font-terminal text-base text-[#bc4a00]">
+                  {r.role}
+                </div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </div>
     </section>
   );

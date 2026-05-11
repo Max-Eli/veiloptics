@@ -1,143 +1,132 @@
 import { SectionHeading } from "./HowItWorks";
+import { Mushroom, Star, FireFlower } from "./Sprites";
 
-const tiers = [
+type Tier = {
+  name: string;
+  price: string;
+  cadence: string;
+  blurb: string;
+  features: string[];
+  sprite: React.ReactNode;
+  btnClass: string;
+  featured?: boolean;
+};
+
+const tiers: Tier[] = [
   {
     name: "STANDARD",
     price: "$149",
-    cadence: "per pair!!",
+    cadence: "per pair",
     blurb:
-      "The regular deal!! 5 day turnaround, insured shipping both ways, and our LIFETIME warranty!!",
+      "The everyday power-up. Hand-finished mod with insured round-trip shipping.",
     features: [
       "5 business day turnaround",
-      "Insured shipping (BOTH WAYS)",
-      "Photos before AND after",
+      "Insured shipping both ways",
+      "Before / after photos",
       "Lifetime workmanship warranty",
     ],
-    bg: "#00ffff",
-    accent: "#ff00ff",
+    sprite: <Mushroom size={64} />,
+    btnClass: "pixel-btn",
   },
   {
-    name: "EXPEDITED!!",
+    name: "EXPEDITED",
     price: "$219",
-    cadence: "per pair!!",
+    cadence: "per pair",
     blurb:
-      "Need em FAST?? We jump you to the front of the line and ship em back OVERNIGHT!! ★",
+      "Fire-flower speed. Front-of-queue handling and overnight return shipping.",
     features: [
-      "48 HOUR turnaround",
-      "Overnight return shipping",
+      "48-hour turnaround on receipt",
+      "Overnight insured return",
       "Priority status updates",
       "Everything in Standard",
     ],
-    bg: "#ff00ff",
-    accent: "#ffff00",
+    sprite: <FireFlower size={64} />,
+    btnClass: "pixel-btn pixel-btn-red",
     featured: true,
   },
   {
     name: "KC LOCAL",
     price: "$129",
-    cadence: "Hand Delivered!!",
+    cadence: "hand delivered",
     blurb:
-      "If you're in the Kansas City metro we will COME TO YOU!! No shipping needed!! Cheapest option!!",
+      "The invincibility star. Free pickup and drop-off if you're in the Kansas City metro.",
     features: [
-      "FREE pickup in KC metro",
-      "FREE drop-off when done",
-      "Same week turnaround",
-      "Cash, Venmo, or PayPal OK",
+      "Free pickup in KC metro",
+      "Free drop-off when done",
+      "Same-week turnaround",
+      "Cash, Venmo, or PayPal",
     ],
-    bg: "#00ff00",
-    accent: "#0000ff",
+    sprite: <Star size={64} className="float" />,
+    btnClass: "pixel-btn pixel-btn-green",
   },
 ];
 
 export function Pricing() {
   return (
-    <section
-      id="pricing"
-      className="bevel-ridge p-4 sm:p-6"
-      style={{ background: "#800080", borderColor: "#ffff00" }}
-    >
-      <SectionHeading
-        eyebrow="$$ MONEY TIME $$"
-        title="OUR PRICES!!"
-        lede="No hidden fees!! No surprises!! We don't charge you ONE PENNY until your frames get here safe!!"
-        eyebrowColor="#00ff00"
-        titleColor="#ffff00"
-      />
+    <section id="pricing" className="bg-black scanlines">
+      <div className="mx-auto max-w-6xl px-4 py-16">
+        <SectionHeading
+          eyebrow="ITEM SHOP"
+          title="POWER-UPS"
+          lede="Three ways to play. Flat-rate pricing — no surprise charges, no payment until your frames arrive."
+        />
 
-      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {tiers.map((t) => (
-          <div
-            key={t.name}
-            className="bevel-out relative p-4 sm:p-6"
-            style={{ background: t.bg, borderColor: t.accent }}
-          >
-            {t.featured ? (
-              <div
-                className="bevel-out impact blink absolute -right-2 -top-3 px-3 py-1 text-sm"
-                style={{ background: "#ff0000", color: "#ffff00" }}
-              >
-                ★ MOST POPULAR!! ★
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {tiers.map((t) => (
+            <div
+              key={t.name}
+              className={`pixel-frame relative p-6 ${
+                t.featured ? "lg:-translate-y-3" : ""
+              }`}
+            >
+              {t.featured ? (
+                <div className="font-pixel blink absolute -top-4 right-4 bg-[#e40058] px-2 py-1 text-[10px] text-white">
+                  ★ TOP PICK
+                </div>
+              ) : null}
+
+              <div className="flex items-center justify-center">{t.sprite}</div>
+
+              <h3 className="font-pixel mt-4 text-center text-sm text-black">
+                {t.name}
+              </h3>
+
+              <div className="mt-4 text-center">
+                <div className="font-pixel text-3xl text-black">{t.price}</div>
+                <div className="font-terminal text-base text-[#bc4a00]">
+                  {t.cadence}
+                </div>
               </div>
-            ) : null}
 
-            <h3
-              className="impact text-2xl sm:text-3xl"
-              style={{ color: t.accent }}
-            >
-              {t.name}
-            </h3>
-            <div
-              className="wordart mt-2 text-5xl sm:text-6xl"
-              style={{ color: "#000080" }}
-            >
-              {t.price}
+              <p className="font-terminal mt-4 text-center text-lg leading-snug text-black">
+                {t.blurb}
+              </p>
+
+              <ul className="font-terminal mt-5 space-y-2 text-lg text-black">
+                {t.features.map((f) => (
+                  <li key={f} className="flex items-start gap-2">
+                    <span className="font-pixel text-[10px] text-[#00a800]">
+                      ▶
+                    </span>
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-6 flex justify-center">
+                <a href="#order" className={`${t.btnClass} text-[10px]`}>
+                  SELECT {t.name}
+                </a>
+              </div>
             </div>
-            <div
-              className="comic text-base"
-              style={{ color: "#ff0000" }}
-            >
-              {t.cadence}
-            </div>
+          ))}
+        </div>
 
-            <p
-              className="comic mt-3 text-sm sm:text-base"
-              style={{ color: "#000" }}
-            >
-              {t.blurb}
-            </p>
-
-            <ul className="comic mt-4 space-y-2 text-sm" style={{ color: "#000" }}>
-              {t.features.map((f) => (
-                <li key={f} className="flex items-start gap-2">
-                  <span
-                    className="impact"
-                    style={{ color: "#ff0000" }}
-                  >
-                    ✓
-                  </span>
-                  <span>{f}</span>
-                </li>
-              ))}
-            </ul>
-
-            <a
-              href="#order"
-              className="bevel-out impact mt-5 inline-block px-5 py-2 text-base no-underline"
-              style={{ background: "#ffff00", color: "#000" }}
-            >
-              ORDER {t.name}!
-            </a>
-          </div>
-        ))}
+        <p className="font-terminal mt-12 text-center text-base text-white">
+          Compatible with Ray-Ban Meta (Wayfarer, Headliner) and Ray-Ban
+          Stories. Got something else? Email us first.
+        </p>
       </div>
-
-      <p
-        className="comic mt-6 text-center text-xs sm:text-sm"
-        style={{ color: "#ffff00" }}
-      >
-        Compatible with Ray-Ban Meta (Wayfarer + Headliner) and Ray-Ban
-        Stories!! Got something else?? E-mail us first!!
-      </p>
     </section>
   );
 }
