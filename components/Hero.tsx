@@ -1,101 +1,122 @@
-import { Coin, Mario, QBlock, BrickBlock, Pipe, Star } from "./Sprites";
+import { Marquee } from "./Marquee";
 
 export function Hero() {
   return (
-    <section id="top" className="cloud-sky relative scanlines overflow-hidden">
-      <div className="mx-auto max-w-6xl px-4 pt-12 pb-6 sm:pt-20">
-        <div className="mb-6 flex justify-center gap-1 sm:gap-2 float">
-          {[BrickBlock, QBlock, BrickBlock, QBlock, BrickBlock].map(
-            (Block, i) => (
-              <div key={i} className="sm:hidden">
-                <Block size={36} />
-              </div>
-            ),
-          )}
-          {[BrickBlock, QBlock, BrickBlock, QBlock, BrickBlock].map(
-            (Block, i) => (
-              <div key={`d-${i}`} className="hidden sm:block">
-                <Block size={48} />
-              </div>
-            ),
-          )}
-        </div>
+    <section id="top">
+      <Marquee>
+        <span>
+          ★★★ WELCOME TO MODSBYMAIL.COM ★★★ NOW ACCEPTING ORDERS!! ★★★ HAND
+          DELIVERY IN KANSAS CITY!! ★★★ TELL YOUR FRIENDS!!! ★★★ SIGN OUR
+          GUESTBOOK!! ★★★&nbsp;&nbsp;&nbsp;
+        </span>
+      </Marquee>
 
-        <h1 className="text-center font-pixel text-3xl leading-[1.2] text-white text-pixel-shadow sm:text-5xl md:text-6xl">
-          <span className="block text-[#fcd000]">MODS</span>
-          <span className="block">BY MAIL</span>
+      <div
+        className="bevel-out p-6 text-center sm:p-10"
+        style={{ background: "#ff00ff", borderColor: "#ffff00" }}
+      >
+        <h1
+          className="wordart rainbow-text text-4xl leading-none sm:text-6xl md:text-7xl"
+          style={{ textShadow: "3px 3px 0 #000" }}
+        >
+          M*O*D*S*B*Y*M*A*I*L
         </h1>
 
-        <p className="mt-8 text-center font-pixel text-[10px] leading-relaxed text-white text-pixel-shadow-sm sm:text-sm">
-          A MAIL-IN SERVICE TO HIDE THE
-          <br className="sm:hidden" />
-          <span className="hidden sm:inline"> </span>
-          RECORDING LIGHT ON YOUR
-          <br />
-          RAY-BAN META GLASSES.
+        <p
+          className="comic mt-4 text-lg font-bold sm:text-2xl"
+          style={{ color: "#ffff00" }}
+        >
+          ~~~ The #1 Spot On The Web To Hide That Annoying LED!! ~~~
         </p>
 
-        <div className="mt-8 flex justify-center">
-          <span className="blink font-pixel text-sm text-white text-pixel-shadow sm:text-lg">
-            ▶ PRESS START
+        <p
+          className="comic mt-2 text-base sm:text-lg"
+          style={{ color: "#ffffff" }}
+        >
+          You mail us your Ray-Ban Meta glasses. We hide the recording light.
+          We mail them back. <span className="blink">EASY!!</span>
+        </p>
+
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href="#order"
+            className="bevel-out impact px-6 py-3 text-2xl no-underline blink"
+            style={{ background: "#00ff00", color: "#000" }}
+          >
+            CLICK HERE TO ORDER!!!
+          </a>
+          <a
+            href="#process"
+            className="bevel-out comic px-4 py-3 text-base no-underline"
+            style={{ background: "#00ffff", color: "#000" }}
+          >
+            How does it work??
+          </a>
+        </div>
+
+        <div
+          className="bevel-in mt-6 inline-block px-4 py-2 text-base"
+          style={{ background: "#000", color: "#00ff00" }}
+        >
+          <span className="courier">★ KANSAS CITY METRO?</span>{" "}
+          <span className="courier blink" style={{ color: "#ff00ff" }}>
+            WE HAND DELIVER!!
           </span>
-        </div>
-
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-          <a href="#order" className="pixel-btn pixel-btn-red text-xs sm:text-sm">
-            START GAME
-          </a>
-          <a href="#process" className="pixel-btn text-xs sm:text-sm">
-            HOW TO PLAY
-          </a>
-        </div>
-
-        {/* KC 1-UP banner */}
-        <div className="mt-10 flex justify-center">
-          <div className="pixel-frame-dark inline-flex items-center gap-3 px-4 py-3">
-            <Star size={28} className="float" />
-            <div className="font-pixel text-[9px] leading-snug text-white sm:text-xs">
-              <div className="text-[#00e430]">1-UP! KANSAS CITY METRO</div>
-              <div className="text-white">FREE HAND DELIVERY</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Scene strip */}
-        <div className="mt-12 flex items-end justify-center gap-3 sm:gap-6">
-          <Mario size={48} className="sm:hidden" />
-          <Mario size={72} className="hidden sm:block" />
-          <Coin size={24} className="float sm:hidden" />
-          <Coin size={40} className="float hidden sm:block" />
-          <Pipe width={44} height={56} className="sm:hidden" />
-          <Pipe width={72} height={92} className="hidden sm:block" />
-          <Coin size={24} className="float sm:hidden" />
-          <Coin size={40} className="float hidden sm:block" />
-          <Star size={32} className="float sm:hidden" />
-          <Star size={56} className="float hidden sm:block" />
         </div>
       </div>
 
-      {/* Ground */}
-      <div className="ground-tile h-12 border-t-4 border-black" />
-
-      {/* HUD stats below ground */}
-      <div className="bg-black px-4 py-4">
-        <div className="mx-auto grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-4">
-          {[
-            ["5 DAYS", "TURNAROUND"],
-            ["LIFETIME", "WARRANTY"],
-            ["INSURED", "SHIPPING"],
-            ["BY HAND", "NO ROBOTS"],
-          ].map(([k, v]) => (
-            <div key={v} className="text-center font-pixel">
-              <div className="text-xs text-[#fcd000] sm:text-sm">{k}</div>
-              <div className="mt-1 text-[8px] text-white sm:text-[10px]">
-                {v}
-              </div>
-            </div>
-          ))}
+      <div
+        className="construction-stripes p-4 text-center"
+        aria-hidden
+      >
+        <div
+          className="bevel-out impact inline-block px-4 py-2 text-lg"
+          style={{ background: "#ffff00", color: "#000" }}
+        >
+          🚧 UNDER CONSTRUCTION 🚧 PARDON OUR DUST!! 🚧
         </div>
+      </div>
+
+      <div
+        className="bevel-in mx-auto my-4 grid max-w-3xl grid-cols-2 gap-2 p-4 text-center sm:grid-cols-4"
+        style={{ background: "#ffff00" }}
+      >
+        {[
+          ["5 DAYS!!", "Turnaround"],
+          ["LIFETIME", "Warranty!!"],
+          ["INSURED", "Shipping!!"],
+          ["BY HAND", "(no robots!)"],
+        ].map(([k, v]) => (
+          <div
+            key={v}
+            className="bevel-out p-2"
+            style={{ background: "#fff" }}
+          >
+            <div
+              className="impact text-lg"
+              style={{ color: "#ff0000" }}
+            >
+              {k}
+            </div>
+            <div className="comic text-xs" style={{ color: "#000080" }}>
+              {v}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div
+        className="comic mx-auto max-w-3xl text-center text-sm"
+        style={{ color: "#ffff00" }}
+      >
+        Visitor #&nbsp;
+        <span
+          className="bevel-in courier inline-block px-2 py-1"
+          style={{ background: "#000", color: "#00ff00" }}
+        >
+          0 0 0 4 2 0 6 9
+        </span>
+        &nbsp; ★ Last updated: 5/7/2026 ★
       </div>
     </section>
   );
