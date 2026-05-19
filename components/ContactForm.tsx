@@ -16,16 +16,41 @@ export function ContactForm() {
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+    if (data._honey) {
+      setStatus("success");
+      form.reset();
+      return;
+    }
 
-      if (!res.ok) {
-        const { error } = await res.json().catch(() => ({ error: null }));
-        throw new Error(error || "Something broke!! Try again??");
+    // Build a form-urlencoded body so the browser treats this as a
+    // "simple" CORS request and skips the preflight.
+    const body = new URLSearchParams();
+    for (const [k, v] of Object.entries(data)) {
+      if (typeof v === "string") body.append(k, v);
+    }
+    body.append(
+      "_subject",
+      `New ModsByMail order — ${String(data.name ?? "")}`,
+    );
+    body.append("_template", "table");
+    body.append("_captcha", "false");
+
+    try {
+      const res = await fetch(
+        "https://formsubmit.co/ajax/getmodsbymail@gmail.com",
+        {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body,
+        },
+      );
+
+      const json = await res.json().catch(() => ({}));
+
+      if (!res.ok || (json.success !== true && json.success !== "true")) {
+        throw new Error(
+          json.message || "Something broke!! Try again in a minute??",
+        );
       }
 
       setStatus("success");
@@ -72,6 +97,22 @@ export function ContactForm() {
         >
           ★ ORDER FORM ★
         </legend>
+
+        {/* honeypot — humans don't fill this, bots do */}
+        <input
+          type="text"
+          name="_honey"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden
+          style={{
+            position: "absolute",
+            left: "-9999px",
+            width: 1,
+            height: 1,
+            opacity: 0,
+          }}
+        />
 
         <div className="grid gap-4 sm:grid-cols-2">
           <Field label="YOUR NAME" name="name" required autoComplete="name" />
