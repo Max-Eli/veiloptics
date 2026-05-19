@@ -6,8 +6,8 @@ const reviews = [
       "OMG!! These guys were SO FAST!! My glasses came back lookin BRAND NEW and I cant even tell where the LED was!! 5 STARS!!!! ★★★★★",
     name: "~ Daniel R. ~",
     role: "Brooklyn, NY",
-    bg: "#ffff00",
-    color: "#ff0000",
+    bg: "#f5d860",
+    color: "#d04848",
     font: "comic",
   },
   {
@@ -15,7 +15,7 @@ const reviews = [
       "I was nervous about mailing my $300 glasses but they sent me a tracking number AND photos!! Came back perfect. Would order again!! :)",
     name: "<<Priya N.>>",
     role: "Austin, TX",
-    bg: "#00ffff",
+    bg: "#8dd0d0",
     color: "#000080",
     font: "times",
   },
@@ -24,8 +24,8 @@ const reviews = [
       "Hand delivery in KC was awesome!! Met him at a coffee shop in Westport, took 4 days, no shipping fees. Highly recommend!!!",
     name: "*Marcus T.*",
     role: "Kansas City, MO",
-    bg: "#00ff00",
-    color: "#800080",
+    bg: "#7abf6e",
+    color: "#704572",
     font: "courier",
   },
 ];
@@ -35,14 +35,14 @@ export function Testimonials() {
     <section
       id="reviews"
       className="bevel-ridge p-4 sm:p-6"
-      style={{ background: "#ff8800", borderColor: "#00ffff" }}
+      style={{ background: "#dd8b3a", borderColor: "#8dd0d0" }}
     >
       <SectionHeading
         eyebrow="~ ~ ~ FROM THE GUESTBOOK ~ ~ ~"
         title="HAPPY CUSTOMERS!!"
         lede="Read what people are saying!! Sign the guestbook below after you order!!"
-        eyebrowColor="#0000ff"
-        titleColor="#ffff00"
+        eyebrowColor="#4055b2"
+        titleColor="#f5d860"
         ledeColor="#ffffff"
       />
 
@@ -70,7 +70,7 @@ export function Testimonials() {
               style={{ background: "#fff", color: "#000" }}
             >
               <div className={`${r.font} font-bold`}>{r.name}</div>
-              <div className="comic" style={{ color: "#0000ff" }}>
+              <div className="comic" style={{ color: "#4055b2" }}>
                 {r.role}
               </div>
             </figcaption>
@@ -81,9 +81,9 @@ export function Testimonials() {
       <div className="mt-6 text-center">
         <span
           className="bevel-in courier inline-block px-3 py-1 text-xs"
-          style={{ background: "#000", color: "#ffff00" }}
+          style={{ background: "#000", color: "#f5d860" }}
         >
-          ✉ guestbook@modsbymail.com
+          ✉ getmodsbymail@gmail.com
         </span>
       </div>
     </section>

@@ -3,7 +3,7 @@ import { SectionHeading } from "./HowItWorks";
 const faqs = [
   {
     q: "Which models do you do??",
-    a: "Ray-Ban Meta (Wayfarer + Headliner) and the original Ray-Ban Stories!! Got a different pair?? E-MAIL US first and we'll let ya know!!",
+    a: "Meta: Ray-Ban Display, Wayfarer, Skyler, Headliner, Scriber, and Blayzer -- PLUS Oakley Vanguard and HSTN!! Got something different?? E-MAIL US first and we'll let ya know!!",
   },
   {
     q: "How long does it take??",
@@ -32,14 +32,14 @@ export function FAQ() {
     <section
       id="faq"
       className="bevel-ridge p-4 sm:p-6"
-      style={{ background: "#ffff00", borderColor: "#ff00ff" }}
+      style={{ background: "#f5d860", borderColor: "#d96bb5" }}
     >
       <SectionHeading
         eyebrow="??? GOT QUESTIONS ???"
         title="F.A.Q."
         lede="Frequently Asked Questions!! (the answers are below!!)"
-        eyebrowColor="#ff0000"
-        titleColor="#0000ff"
+        eyebrowColor="#d04848"
+        titleColor="#4055b2"
         ledeColor="#000080"
       />
 
@@ -52,7 +52,7 @@ export function FAQ() {
             <summary className="cursor-pointer list-none">
               <span
                 className="impact text-lg sm:text-xl"
-                style={{ color: "#ff0000" }}
+                style={{ color: "#d04848" }}
               >
                 Q:
               </span>{" "}
@@ -64,7 +64,7 @@ export function FAQ() {
               </span>
               <span
                 className="comic ml-2 text-xs"
-                style={{ color: "#0000ff" }}
+                style={{ color: "#4055b2" }}
               >
                 [click to open]
               </span>
@@ -72,7 +72,7 @@ export function FAQ() {
             <p className="mt-2 ml-6 text-sm sm:text-base">
               <span
                 className="impact text-lg"
-                style={{ color: "#0000ff" }}
+                style={{ color: "#4055b2" }}
               >
                 A:
               </span>{" "}

@@ -6,25 +6,25 @@ export function Order() {
     <section
       id="order"
       className="bevel-ridge p-4 sm:p-6"
-      style={{ background: "#0000ff", borderColor: "#00ff00" }}
+      style={{ background: "#4055b2", borderColor: "#7abf6e" }}
     >
       <SectionHeading
         eyebrow="!! READY TO ORDER !!"
         title="START AN ORDER!!"
         lede="Fill out the form!! We e-mail back within 1 business day with a pre-paid label!!"
-        eyebrowColor="#ffff00"
-        titleColor="#00ffff"
+        eyebrowColor="#f5d860"
+        titleColor="#8dd0d0"
         ledeColor="#ffffff"
       />
 
       <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_1.2fr]">
         <div
           className="bevel-out p-4"
-          style={{ background: "#ffff00" }}
+          style={{ background: "#f5d860" }}
         >
           <h3
             className="impact text-2xl"
-            style={{ color: "#ff0000" }}
+            style={{ color: "#d04848" }}
           >
             ★ CONTACT INFO ★
           </h3>
@@ -35,8 +35,8 @@ export function Order() {
           >
             <li>
               <strong>E-MAIL:</strong>{" "}
-              <a href="mailto:orders@modsbymail.com">
-                orders@modsbymail.com
+              <a href="mailto:getmodsbymail@gmail.com">
+                getmodsbymail@gmail.com
               </a>
             </li>
             <li>
@@ -51,11 +51,11 @@ export function Order() {
 
           <div
             className="bevel-in mt-3 p-3"
-            style={{ background: "#00ff00" }}
+            style={{ background: "#7abf6e" }}
           >
             <div
-              className="impact blink text-base"
-              style={{ color: "#ff0000" }}
+              className="impact text-base"
+              style={{ color: "#d04848" }}
             >
               ★★ KC METRO?? ★★
             </div>
@@ -63,7 +63,7 @@ export function Order() {
               className="comic mt-2 text-sm"
               style={{ color: "#000" }}
             >
-              We will <span className="blink"><strong>HAND DELIVER</strong></span>{" "}
+              We will <strong>HAND DELIVER</strong>{" "}
               to anyone in the Kansas City metro area for FREE!! No shipping
               required, just pick &quot;KC Local&quot; in the form!!
             </p>
@@ -71,10 +71,30 @@ export function Order() {
 
           <hr />
 
+          <div
+            className="bevel-out mt-3 p-3 text-center"
+            style={{ background: "#ffffff", borderColor: "#4055b2" }}
+          >
+            <div
+              className="impact text-lg"
+              style={{ color: "#d04848" }}
+            >
+              ★ WE ACCEPT ★
+            </div>
+            <div
+              className="comic mt-1 text-sm sm:text-base"
+              style={{ color: "#000080" }}
+            >
+              💳 Credit / Debit Card
+              <br />
+              💵 Cash &nbsp;·&nbsp; Venmo &nbsp;·&nbsp; PayPal
+            </div>
+          </div>
+
           <div className="mt-3 text-center">
             <span
               className="bevel-out comic inline-block px-3 py-1 text-xs"
-              style={{ background: "#ff00ff", color: "#fff" }}
+              style={{ background: "#d96bb5", color: "#fff" }}
             >
               ✉ Mail us anytime!!
             </span>

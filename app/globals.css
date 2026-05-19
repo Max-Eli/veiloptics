@@ -13,21 +13,21 @@
 
   body {
     background-color: #000080;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='100%25' height='100%25' fill='%23000080'/><text x='30' y='40' font-size='22' fill='yellow'>%E2%98%85</text><text x='150' y='70' font-size='14' fill='white'>%E2%98%85</text><text x='80' y='110' font-size='28' fill='%2300ffff'>%E2%98%85</text><text x='20' y='160' font-size='18' fill='%23ff00ff'>%E2%98%85</text><text x='170' y='180' font-size='20' fill='lime'>%E2%98%85</text></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='100%25' height='100%25' fill='%23000080'/><text x='30' y='40' font-size='22' fill='yellow'>%E2%98%85</text><text x='150' y='70' font-size='14' fill='white'>%E2%98%85</text><text x='80' y='110' font-size='28' fill='%238dd0d0'>%E2%98%85</text><text x='20' y='160' font-size='18' fill='%23d96bb5'>%E2%98%85</text><text x='170' y='180' font-size='20' fill='lime'>%E2%98%85</text></svg>");
     color: #000;
     font-family: "Times New Roman", Times, serif;
     font-size: 16px;
   }
 
   a {
-    color: #0000ff;
+    color: #4055b2;
     text-decoration: underline;
   }
   a:visited {
-    color: #800080;
+    color: #704572;
   }
   a:hover {
-    color: #ff0000;
+    color: #d04848;
     background: yellow;
   }
 
@@ -65,8 +65,8 @@
     color: yellow;
     font-family: "Courier New", Courier, monospace;
     font-weight: bold;
-    border-top: 4px ridge #ff00ff;
-    border-bottom: 4px ridge #ff00ff;
+    border-top: 4px ridge #d96bb5;
+    border-bottom: 4px ridge #d96bb5;
   }
   .marquee-track {
     display: inline-block;
@@ -102,13 +102,13 @@
   .rainbow-text {
     background: linear-gradient(
       90deg,
-      #ff0000,
-      #ff8800,
-      #ffff00,
-      #00ff00,
-      #00ffff,
-      #0000ff,
-      #ff00ff
+      #d04848,
+      #dd8b3a,
+      #f5d860,
+      #7abf6e,
+      #8dd0d0,
+      #4055b2,
+      #d96bb5
     );
     -webkit-background-clip: text;
     background-clip: text;
@@ -122,8 +122,8 @@
     letter-spacing: 0.04em;
     text-shadow:
       2px 2px 0 #000,
-      4px 4px 0 #ff00ff,
-      6px 6px 0 #00ffff;
+      4px 4px 0 #d96bb5,
+      6px 6px 0 #8dd0d0;
   }
 
   .comic {

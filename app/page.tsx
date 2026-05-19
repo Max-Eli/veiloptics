@@ -1,5 +1,6 @@
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
+import { VideoSection } from "@/components/VideoSection";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Pricing } from "@/components/Pricing";
 import { Testimonials } from "@/components/Testimonials";
@@ -13,6 +14,7 @@ export default function Page() {
       <Nav />
       <main>
         <Hero />
+        <VideoSection />
         <HowItWorks />
         <Pricing />
         <Testimonials />

@@ -4,23 +4,23 @@ const steps = [
     title: "FILL OUT THE FORM!!",
     body:
       "Scroll down and tell us about your glasses. We e-mail you back the SAME DAY with all the info!! (or the next day on weekends.)",
-    bg: "#ff00ff",
-    color: "#ffff00",
+    bg: "#d96bb5",
+    color: "#f5d860",
   },
   {
     n: "2",
     title: "MAIL US YOUR FRAMES",
     body:
       "We send you a PRE-PAID label!! Just drop the package off at any post office. INSURED so you don't gotta worry!!",
-    bg: "#00ffff",
-    color: "#0000ff",
+    bg: "#8dd0d0",
+    color: "#4055b2",
   },
   {
     n: "3",
     title: "WE DO THE MOD!!",
     body:
       "Our top tech (one guy, in his garage, but he is VERY good) hides the LED by hand under a magnifier. Photos before AND after!",
-    bg: "#00ff00",
+    bg: "#7abf6e",
     color: "#000080",
   },
   {
@@ -28,8 +28,8 @@ const steps = [
     title: "BACK ON YOUR FACE!!",
     body:
       "Cleaned + tested + shipped back overnight. Most folks have em back in 5 days flat!! Or pick up in KC for FREE!!",
-    bg: "#ffff00",
-    color: "#ff0000",
+    bg: "#f5d860",
+    color: "#d04848",
   },
 ];
 
@@ -38,15 +38,15 @@ export function HowItWorks() {
     <section
       id="process"
       className="bevel-ridge p-4 sm:p-6"
-      style={{ background: "#000", borderColor: "#00ff00" }}
+      style={{ background: "#000", borderColor: "#7abf6e" }}
     >
       <SectionHeading
         eyebrow="* * * READ THIS FIRST * * *"
         title="HOW IT WORKS!!"
         lede="It's only 4 easy steps!! No tools required on YOUR end!!"
-        eyebrowColor="#00ff00"
-        titleColor="#ffff00"
-        ledeColor="#ff00ff"
+        eyebrowColor="#7abf6e"
+        titleColor="#f5d860"
+        ledeColor="#d96bb5"
       />
 
       <ol className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -59,7 +59,7 @@ export function HowItWorks() {
             <div className="flex items-start gap-4">
               <div
                 className="bevel-in impact grid h-12 w-12 shrink-0 place-items-center text-3xl"
-                style={{ background: "#fff", color: "#ff0000" }}
+                style={{ background: "#fff", color: "#d04848" }}
               >
                 {s.n}
               </div>
@@ -83,8 +83,8 @@ export function HowItWorks() {
       </ol>
 
       <div
-        className="comic blink mt-6 text-center text-base sm:text-xl"
-        style={{ color: "#00ff00" }}
+        className="comic mt-6 text-center text-base sm:text-xl"
+        style={{ color: "#7abf6e" }}
       >
         ★ ★ ★ IT'S THAT EASY!! ★ ★ ★
       </div>
@@ -96,8 +96,8 @@ export function SectionHeading({
   eyebrow,
   title,
   lede,
-  eyebrowColor = "#ff00ff",
-  titleColor = "#ffff00",
+  eyebrowColor = "#d96bb5",
+  titleColor = "#f5d860",
   ledeColor = "#fff",
 }: {
   eyebrow: string;
@@ -110,7 +110,7 @@ export function SectionHeading({
   return (
     <div className="text-center">
       <div
-        className="comic blink text-sm sm:text-base"
+        className="comic text-sm sm:text-base"
         style={{ color: eyebrowColor }}
       >
         {eyebrow}

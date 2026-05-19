@@ -13,7 +13,7 @@ export function Hero() {
 
       <div
         className="bevel-out p-6 text-center sm:p-10"
-        style={{ background: "#ff00ff", borderColor: "#ffff00" }}
+        style={{ background: "#d96bb5", borderColor: "#f5d860" }}
       >
         <h1
           className="wordart rainbow-text text-4xl leading-none sm:text-6xl md:text-7xl"
@@ -24,7 +24,7 @@ export function Hero() {
 
         <p
           className="comic mt-4 text-lg font-bold sm:text-2xl"
-          style={{ color: "#ffff00" }}
+          style={{ color: "#f5d860" }}
         >
           ~~~ The #1 Spot On The Web To Hide That Annoying LED!! ~~~
         </p>
@@ -33,22 +33,22 @@ export function Hero() {
           className="comic mt-2 text-base sm:text-lg"
           style={{ color: "#ffffff" }}
         >
-          You mail us your Ray-Ban Meta glasses. We hide the recording light.
-          We mail them back. <span className="blink">EASY!!</span>
+          You mail us your Ray-Ban or Oakley Meta glasses. We hide the recording light.
+          We mail them back. <span>EASY!!</span>
         </p>
 
         <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
           <a
             href="#order"
             className="bevel-out impact px-6 py-3 text-2xl no-underline blink"
-            style={{ background: "#00ff00", color: "#000" }}
+            style={{ background: "#7abf6e", color: "#000" }}
           >
             CLICK HERE TO ORDER!!!
           </a>
           <a
             href="#process"
             className="bevel-out comic px-4 py-3 text-base no-underline"
-            style={{ background: "#00ffff", color: "#000" }}
+            style={{ background: "#8dd0d0", color: "#000" }}
           >
             How does it work??
           </a>
@@ -56,10 +56,10 @@ export function Hero() {
 
         <div
           className="bevel-in mt-6 inline-block px-4 py-2 text-base"
-          style={{ background: "#000", color: "#00ff00" }}
+          style={{ background: "#000", color: "#7abf6e" }}
         >
           <span className="courier">★ KANSAS CITY METRO?</span>{" "}
-          <span className="courier blink" style={{ color: "#ff00ff" }}>
+          <span className="courier" style={{ color: "#d96bb5" }}>
             WE HAND DELIVER!!
           </span>
         </div>
@@ -71,7 +71,7 @@ export function Hero() {
       >
         <div
           className="bevel-out impact inline-block px-4 py-2 text-lg"
-          style={{ background: "#ffff00", color: "#000" }}
+          style={{ background: "#f5d860", color: "#000" }}
         >
           🚧 UNDER CONSTRUCTION 🚧 PARDON OUR DUST!! 🚧
         </div>
@@ -79,10 +79,10 @@ export function Hero() {
 
       <div
         className="bevel-in mx-auto my-4 grid max-w-3xl grid-cols-2 gap-2 p-4 text-center sm:grid-cols-4"
-        style={{ background: "#ffff00" }}
+        style={{ background: "#f5d860" }}
       >
         {[
-          ["5 DAYS!!", "Turnaround"],
+          ["24 HOURS", "Turnaround"],
           ["LIFETIME", "Warranty!!"],
           ["INSURED", "Shipping!!"],
           ["BY HAND", "(no robots!)"],
@@ -94,7 +94,7 @@ export function Hero() {
           >
             <div
               className="impact text-lg"
-              style={{ color: "#ff0000" }}
+              style={{ color: "#d04848" }}
             >
               {k}
             </div>
@@ -107,12 +107,12 @@ export function Hero() {
 
       <div
         className="comic mx-auto max-w-3xl text-center text-sm"
-        style={{ color: "#ffff00" }}
+        style={{ color: "#f5d860" }}
       >
         Visitor #&nbsp;
         <span
           className="bevel-in courier inline-block px-2 py-1"
-          style={{ background: "#000", color: "#00ff00" }}
+          style={{ background: "#000", color: "#7abf6e" }}
         >
           0 0 0 4 2 0 6 9
         </span>

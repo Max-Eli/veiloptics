@@ -3,49 +3,49 @@ import { SectionHeading } from "./HowItWorks";
 const tiers = [
   {
     name: "STANDARD",
-    price: "$149",
+    price: "$119",
     cadence: "per pair!!",
     blurb:
       "The regular deal!! 5 day turnaround, insured shipping both ways, and our LIFETIME warranty!!",
     features: [
-      "5 business day turnaround",
+      "2 business day turnaround",
       "Insured shipping (BOTH WAYS)",
       "Photos before AND after",
       "Lifetime workmanship warranty",
     ],
-    bg: "#00ffff",
-    accent: "#ff00ff",
+    bg: "#8dd0d0",
+    accent: "#d96bb5",
   },
   {
     name: "EXPEDITED!!",
-    price: "$219",
+    price: "$139",
     cadence: "per pair!!",
     blurb:
       "Need em FAST?? We jump you to the front of the line and ship em back OVERNIGHT!! ★",
     features: [
-      "48 HOUR turnaround",
+      "24 HOUR turnaround",
       "Overnight return shipping",
       "Priority status updates",
       "Everything in Standard",
     ],
-    bg: "#ff00ff",
-    accent: "#ffff00",
+    bg: "#d96bb5",
+    accent: "#f5d860",
     featured: true,
   },
   {
     name: "KC LOCAL",
-    price: "$129",
+    price: "$89",
     cadence: "Hand Delivered!!",
     blurb:
       "If you're in the Kansas City metro we will COME TO YOU!! No shipping needed!! Cheapest option!!",
     features: [
       "FREE pickup in KC metro",
       "FREE drop-off when done",
-      "Same week turnaround",
-      "Cash, Venmo, or PayPal OK",
+      "Same day turnaround",
+      "Card, Cash, Venmo, or PayPal OK",
     ],
-    bg: "#00ff00",
-    accent: "#0000ff",
+    bg: "#7abf6e",
+    accent: "#4055b2",
   },
 ];
 
@@ -54,14 +54,14 @@ export function Pricing() {
     <section
       id="pricing"
       className="bevel-ridge p-4 sm:p-6"
-      style={{ background: "#800080", borderColor: "#ffff00" }}
+      style={{ background: "#704572", borderColor: "#f5d860" }}
     >
       <SectionHeading
         eyebrow="$$ MONEY TIME $$"
         title="OUR PRICES!!"
         lede="No hidden fees!! No surprises!! We don't charge you ONE PENNY until your frames get here safe!!"
-        eyebrowColor="#00ff00"
-        titleColor="#ffff00"
+        eyebrowColor="#7abf6e"
+        titleColor="#f5d860"
       />
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -73,8 +73,8 @@ export function Pricing() {
           >
             {t.featured ? (
               <div
-                className="bevel-out impact blink absolute -right-2 -top-3 px-3 py-1 text-sm"
-                style={{ background: "#ff0000", color: "#ffff00" }}
+                className="bevel-out impact absolute -right-2 -top-3 px-3 py-1 text-sm"
+                style={{ background: "#d04848", color: "#f5d860" }}
               >
                 ★ MOST POPULAR!! ★
               </div>
@@ -94,7 +94,7 @@ export function Pricing() {
             </div>
             <div
               className="comic text-base"
-              style={{ color: "#ff0000" }}
+              style={{ color: "#d04848" }}
             >
               {t.cadence}
             </div>
@@ -111,7 +111,7 @@ export function Pricing() {
                 <li key={f} className="flex items-start gap-2">
                   <span
                     className="impact"
-                    style={{ color: "#ff0000" }}
+                    style={{ color: "#d04848" }}
                   >
                     ✓
                   </span>
@@ -123,7 +123,7 @@ export function Pricing() {
             <a
               href="#order"
               className="bevel-out impact mt-5 inline-block px-5 py-2 text-base no-underline"
-              style={{ background: "#ffff00", color: "#000" }}
+              style={{ background: "#f5d860", color: "#000" }}
             >
               ORDER {t.name}!
             </a>
@@ -131,13 +131,68 @@ export function Pricing() {
         ))}
       </div>
 
-      <p
-        className="comic mt-6 text-center text-xs sm:text-sm"
-        style={{ color: "#ffff00" }}
+      <div
+        className="bevel-out mt-8 p-4 sm:p-6"
+        style={{ background: "#f5d860", borderColor: "#d04848" }}
       >
-        Compatible with Ray-Ban Meta (Wayfarer + Headliner) and Ray-Ban
-        Stories!! Got something else?? E-mail us first!!
-      </p>
+        <div
+          className="impact text-center text-3xl sm:text-5xl"
+          style={{ color: "#d04848" }}
+        >
+          ★ COMPATIBLE WITH ★
+        </div>
+
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          <div
+            className="bevel-in p-4"
+            style={{ background: "#ffffff" }}
+          >
+            <div
+              className="impact text-2xl sm:text-3xl"
+              style={{ color: "#000080" }}
+            >
+              META RAY-BAN
+            </div>
+            <ul
+              className="comic mt-3 grid grid-cols-2 gap-x-3 gap-y-1 text-lg sm:text-2xl"
+              style={{ color: "#000" }}
+            >
+              <li>★ Display</li>
+              <li>★ Wayfarer</li>
+              <li>★ Skyler</li>
+              <li>★ Headliner</li>
+              <li>★ Scriber</li>
+              <li>★ Blayzer</li>
+            </ul>
+          </div>
+
+          <div
+            className="bevel-in p-4"
+            style={{ background: "#ffffff" }}
+          >
+            <div
+              className="impact text-2xl sm:text-3xl"
+              style={{ color: "#000080" }}
+            >
+              META OAKLEY
+            </div>
+            <ul
+              className="comic mt-3 text-lg sm:text-2xl"
+              style={{ color: "#000" }}
+            >
+              <li>★ Vanguard</li>
+              <li>★ HSTN</li>
+            </ul>
+          </div>
+        </div>
+
+        <p
+          className="impact mt-5 text-center text-xl sm:text-2xl"
+          style={{ color: "#d04848" }}
+        >
+          GOT SOMETHING ELSE?? E-MAIL US FIRST!!
+        </p>
+      </div>
     </section>
   );
 }

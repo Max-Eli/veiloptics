@@ -13,22 +13,22 @@ export function Footer() {
       <hr />
 
       <div className="comic mt-4 flex flex-wrap justify-center gap-2 text-xs">
-        <Badge bg="#ff00ff" fg="#ffff00">
+        <Badge bg="#d96bb5" fg="#f5d860">
           ★ Best Viewed in IE 6 ★
         </Badge>
-        <Badge bg="#000" fg="#00ff00">
+        <Badge bg="#000" fg="#7abf6e">
           Optimized for 800x600
         </Badge>
-        <Badge bg="#0000ff" fg="#ffff00">
+        <Badge bg="#4055b2" fg="#f5d860">
           Made with Microsoft FrontPage
         </Badge>
-        <Badge bg="#ffff00" fg="#ff0000">
+        <Badge bg="#f5d860" fg="#d04848">
           ★ HTML 4.01 Transitional ★
         </Badge>
-        <Badge bg="#00ffff" fg="#0000ff">
+        <Badge bg="#8dd0d0" fg="#4055b2">
           Get Netscape NOW!!
         </Badge>
-        <Badge bg="#00ff00" fg="#000">
+        <Badge bg="#7abf6e" fg="#000">
           Y2K Compliant!!
         </Badge>
       </div>
@@ -37,8 +37,8 @@ export function Footer() {
 
       <div className="mt-4 text-center">
         <span
-          className="comic blink text-sm"
-          style={{ color: "#ff0000" }}
+          className="comic text-sm"
+          style={{ color: "#d04848" }}
         >
           ★ ★ ★ SIGN OUR GUESTBOOK!! ★ ★ ★
         </span>
@@ -47,7 +47,7 @@ export function Footer() {
       <div className="mt-4 text-center">
         <span
           className="bevel-in courier inline-block px-3 py-1 text-xs"
-          style={{ background: "#000", color: "#00ff00" }}
+          style={{ background: "#000", color: "#7abf6e" }}
         >
           You are visitor #&nbsp;0&nbsp;0&nbsp;0&nbsp;4&nbsp;2&nbsp;0&nbsp;6&nbsp;9
         </span>
@@ -61,12 +61,12 @@ export function Footer() {
       >
         © {new Date().getFullYear()} ModsByMail.com -- All Rights Reserved!!
         Not affiliated with Meta Platforms or Ray-Ban / EssilorLuxottica.
-        ★ Webmaster: orders@modsbymail.com ★
+        ★ Webmaster: getmodsbymail@gmail.com ★
       </p>
 
       <p
         className="comic mt-2 text-center text-xs"
-        style={{ color: "#800080" }}
+        style={{ color: "#704572" }}
       >
         ~~~ Thanks for visiting!! Come back soon!! ~~~
       </p>

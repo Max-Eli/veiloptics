@@ -40,17 +40,17 @@ export function ContactForm() {
     return (
       <div
         className="bevel-out p-6 text-center"
-        style={{ background: "#00ff00", borderColor: "#ffff00" }}
+        style={{ background: "#7abf6e", borderColor: "#f5d860" }}
       >
         <div
           className="wordart text-3xl"
-          style={{ color: "#ff0000" }}
+          style={{ color: "#d04848" }}
         >
           THANK YOU!!
         </div>
         <p className="comic mt-3 text-base" style={{ color: "#000" }}>
           We got your request!! Check your e-mail -- we'll send you the shipping
-          label and instructions within 1 business day. <span className="blink">★</span>
+          label and instructions within 1 business day. <span>★</span>
         </p>
       </div>
     );
@@ -60,7 +60,7 @@ export function ContactForm() {
     <form
       onSubmit={onSubmit}
       className="bevel-out p-4 sm:p-6"
-      style={{ background: "#c0c0c0", borderColor: "#ff00ff" }}
+      style={{ background: "#c0c0c0", borderColor: "#d96bb5" }}
     >
       <fieldset
         className="bevel-in p-3 sm:p-4"
@@ -68,7 +68,7 @@ export function ContactForm() {
       >
         <legend
           className="impact px-2 text-xl"
-          style={{ background: "#ffff00", color: "#ff0000" }}
+          style={{ background: "#f5d860", color: "#d04848" }}
         >
           ★ ORDER FORM ★
         </legend>
@@ -90,10 +90,14 @@ export function ContactForm() {
             name="model"
             required
             options={[
-              "Ray-Ban Meta -- Wayfarer",
-              "Ray-Ban Meta -- Headliner",
-              "Ray-Ban Meta -- Skyler",
-              "Ray-Ban Stories (original)",
+              "Meta Ray-Ban -- Display",
+              "Meta Ray-Ban -- Wayfarer",
+              "Meta Ray-Ban -- Skyler",
+              "Meta Ray-Ban -- Headliner",
+              "Meta Ray-Ban -- Scriber",
+              "Meta Ray-Ban -- Blayzer",
+              "Meta Oakley -- Vanguard",
+              "Meta Oakley -- HSTN",
               "Other / not sure",
             ]}
           />
@@ -102,9 +106,9 @@ export function ContactForm() {
             name="tier"
             required
             options={[
-              "Standard -- $149",
-              "Expedited -- $219",
-              "KC Local Hand Delivery -- $129",
+              "Standard -- $119",
+              "Expedited -- $139",
+              "KC Local Hand Delivery -- $89",
             ]}
           />
         </div>
@@ -147,7 +151,7 @@ export function ContactForm() {
         {status === "error" ? (
           <p
             className="bevel-in mt-3 p-2 text-sm font-bold"
-            style={{ background: "#ff0000", color: "#ffff00" }}
+            style={{ background: "#d04848", color: "#f5d860" }}
           >
             !! {errorMsg} !!
           </p>
@@ -158,14 +162,14 @@ export function ContactForm() {
             type="submit"
             disabled={status === "submitting"}
             className="bevel-out impact px-6 py-3 text-xl"
-            style={{ background: "#00ff00", color: "#000" }}
+            style={{ background: "#7abf6e", color: "#000" }}
           >
             {status === "submitting" ? "Sending…" : "SUBMIT!!!"}
           </button>
           <button
             type="reset"
             className="bevel-out comic px-4 py-3 text-base"
-            style={{ background: "#ff0000", color: "#fff" }}
+            style={{ background: "#d04848", color: "#fff" }}
           >
             Reset
           </button>
@@ -175,7 +179,7 @@ export function ContactForm() {
           className="comic mt-4 text-xs"
           style={{ color: "#000080" }}
         >
-          ~ NO PAYMENT now!! We invoice AFTER your frames get here safe!! ~
+          ~ NO PAYMENT now!! We invoice AFTER your frames get here safe!! Pay by Card, Cash, Venmo, or PayPal!! ~
         </p>
       </fieldset>
     </form>
@@ -203,7 +207,7 @@ function Field({
       >
         {label}
         {required ? (
-          <span style={{ color: "#ff0000" }}> *</span>
+          <span style={{ color: "#d04848" }}> *</span>
         ) : null}
       </span>
       <input
@@ -237,7 +241,7 @@ function Select({
       >
         {label}
         {required ? (
-          <span style={{ color: "#ff0000" }}> *</span>
+          <span style={{ color: "#d04848" }}> *</span>
         ) : null}
       </span>
       <select

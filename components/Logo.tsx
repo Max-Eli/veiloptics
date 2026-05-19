@@ -1,13 +1,27 @@
-export function Logo({ className = "" }: { className?: string }) {
+export function Logo({
+  className = "",
+  size = 96,
+}: {
+  className?: string;
+  size?: number;
+}) {
   return (
     <span
-      className={`wordart text-3xl sm:text-4xl ${className}`}
-      style={{ display: "inline-block" }}
+      className={`bevel-out inline-block ${className}`}
+      style={{
+        background: "#ffffff",
+        padding: 4,
+        borderColor: "#f5d860",
+      }}
     >
-      <span style={{ color: "#ff00ff" }}>Mods</span>
-      <span style={{ color: "#ffff00" }}>By</span>
-      <span style={{ color: "#00ffff" }}>Mail</span>
-      <span style={{ color: "#ff0000" }}>!!</span>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/logo.png"
+        alt="ModsByMail"
+        width={size}
+        height={size}
+        style={{ display: "block", width: size, height: "auto" }}
+      />
     </span>
   );
 }

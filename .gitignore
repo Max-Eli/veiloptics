@@ -6,3 +6,7 @@ out
 *.log
 .DS_Store
 next-env.d.ts
+
+# Raw video sources — keep compressed demo.mp4 only
+public/*.mov
+public/copy_*
