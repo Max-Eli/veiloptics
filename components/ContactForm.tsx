@@ -4,6 +4,8 @@ import { useState } from "react";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
+const WEB3FORMS_KEY = "eb4032df-74ea-4204-8802-46ed5ab42783";
+
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -14,40 +16,38 @@ export function ContactForm() {
     setErrorMsg(null);
 
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
+    const data = Object.fromEntries(new FormData(form).entries()) as Record<
+      string,
+      string
+    >;
 
-    if (data._honey) {
+    if (data.botcheck) {
       setStatus("success");
       form.reset();
       return;
     }
 
-    // Build a form-urlencoded body so the browser treats this as a
-    // "simple" CORS request and skips the preflight.
-    const body = new URLSearchParams();
-    for (const [k, v] of Object.entries(data)) {
-      if (typeof v === "string") body.append(k, v);
-    }
-    body.append(
-      "_subject",
-      `New ModsByMail order — ${String(data.name ?? "")}`,
-    );
-    body.append("_template", "table");
-    body.append("_captcha", "false");
+    const payload = {
+      access_key: WEB3FORMS_KEY,
+      subject: `New ModsByMail order — ${data.name || "(no name)"}`,
+      from_name: "ModsByMail order form",
+      replyto: data.email || "",
+      ...data,
+    };
 
     try {
-      const res = await fetch(
-        "https://formsubmit.co/ajax/getmodsbymail@gmail.com",
-        {
-          method: "POST",
-          headers: { Accept: "application/json" },
-          body,
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
-      );
+        body: JSON.stringify(payload),
+      });
 
       const json = await res.json().catch(() => ({}));
 
-      if (!res.ok || (json.success !== true && json.success !== "true")) {
+      if (!res.ok || json.success !== true) {
         throw new Error(
           json.message || "Something broke!! Try again in a minute??",
         );
@@ -100,8 +100,8 @@ export function ContactForm() {
 
         {/* honeypot — humans don't fill this, bots do */}
         <input
-          type="text"
-          name="_honey"
+          type="checkbox"
+          name="botcheck"
           tabIndex={-1}
           autoComplete="off"
           aria-hidden
