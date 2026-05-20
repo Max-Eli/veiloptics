@@ -42,7 +42,7 @@ const tiers = [
       "FREE pickup in KC metro",
       "FREE drop-off when done",
       "Same day turnaround",
-      "Card, Cash, Venmo, or PayPal OK",
+      "Pay online by card -- skip shipping entirely",
     ],
     bg: "#7abf6e",
     accent: "#4055b2",
@@ -59,7 +59,7 @@ export function Pricing() {
       <SectionHeading
         eyebrow="$$ MONEY TIME $$"
         title="OUR PRICES!!"
-        lede="No hidden fees!! No surprises!! We don't charge you ONE PENNY until your frames get here safe!!"
+        lede="No hidden fees!! FREE insured shipping both ways!! Pay securely up front by card, get your prepaid label by e-mail in minutes!!"
         eyebrowColor="#7abf6e"
         titleColor="#f5d860"
       />

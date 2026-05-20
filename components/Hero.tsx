@@ -84,7 +84,7 @@ export function Hero() {
         {[
           ["24 HOURS", "Turnaround"],
           ["LIFETIME", "Warranty!!"],
-          ["INSURED", "Shipping!!"],
+          ["FREE", "Shipping!! (both ways)"],
           ["BY HAND", "(no robots!)"],
         ].map(([k, v]) => (
           <div

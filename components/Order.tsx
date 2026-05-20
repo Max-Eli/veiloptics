@@ -79,15 +79,17 @@ export function Order() {
               className="impact text-lg"
               style={{ color: "#d04848" }}
             >
-              ★ WE ACCEPT ★
+              ★ HOW IT WORKS ★
             </div>
             <div
               className="comic mt-1 text-sm sm:text-base"
               style={{ color: "#000080" }}
             >
-              💳 Credit / Debit Card
+              💳 Pay securely by Card &mdash; powered by Stripe
               <br />
-              💵 Cash &nbsp;·&nbsp; Venmo &nbsp;·&nbsp; PayPal
+              📦 FREE insured shipping &mdash; BOTH WAYS!!
+              <br />
+              ✉ Prepaid label e-mailed to you instantly
             </div>
           </div>
 

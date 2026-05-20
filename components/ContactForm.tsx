@@ -2,9 +2,7 @@
 
 import { useState } from "react";
 
-type Status = "idle" | "submitting" | "success" | "error";
-
-const WEB3FORMS_KEY = "eb4032df-74ea-4204-8802-46ed5ab42783";
+type Status = "idle" | "submitting" | "error";
 
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -22,63 +20,36 @@ export function ContactForm() {
     >;
 
     if (data.botcheck) {
-      setStatus("success");
+      // bot — silently no-op
+      setStatus("idle");
       form.reset();
       return;
     }
 
-    const payload = {
-      access_key: WEB3FORMS_KEY,
-      subject: `New ModsByMail order — ${data.name || "(no name)"}`,
-      from_name: "ModsByMail order form",
-      replyto: data.email || "",
-      ...data,
-    };
-
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("/api/checkout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(data),
       });
 
       const json = await res.json().catch(() => ({}));
 
-      if (!res.ok || json.success !== true) {
+      if (!res.ok || !json.url) {
         throw new Error(
-          json.message || "Something broke!! Try again in a minute??",
+          json.error || "Couldn't start checkout. Try again in a minute??",
         );
       }
 
-      setStatus("success");
-      form.reset();
+      // Redirect to Stripe-hosted checkout. Page leaves the site here.
+      window.location.href = json.url;
     } catch (err) {
       setStatus("error");
       setErrorMsg(err instanceof Error ? err.message : "Unknown error!!");
     }
-  }
-
-  if (status === "success") {
-    return (
-      <div
-        className="bevel-out p-6 text-center"
-        style={{ background: "#7abf6e", borderColor: "#f5d860" }}
-      >
-        <div
-          className="wordart text-3xl"
-          style={{ color: "#d04848" }}
-        >
-          THANK YOU!!
-        </div>
-        <p className="comic mt-3 text-base" style={{ color: "#000" }}>
-          We got your request!! Check your e-mail -- we'll send you the shipping
-          label and instructions within 1 business day. <span>★</span>
-        </p>
-      </div>
-    );
   }
 
   return (
@@ -205,7 +176,7 @@ export function ContactForm() {
             className="bevel-out impact px-6 py-3 text-xl"
             style={{ background: "#7abf6e", color: "#000" }}
           >
-            {status === "submitting" ? "Sending…" : "SUBMIT!!!"}
+            {status === "submitting" ? "Sending…" : "PAY & ORDER!!"}
           </button>
           <button
             type="reset"
@@ -220,7 +191,7 @@ export function ContactForm() {
           className="comic mt-4 text-xs"
           style={{ color: "#000080" }}
         >
-          ~ NO PAYMENT now!! We invoice AFTER your frames get here safe!! Pay by Card, Cash, Venmo, or PayPal!! ~
+          ★ Secure checkout powered by Stripe ★ FREE INSURED SHIPPING both ways ★ Full refund anytime before we begin work ★
         </p>
       </fieldset>
     </form>

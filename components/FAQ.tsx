@@ -19,7 +19,15 @@ const faqs = [
   },
   {
     q: "Is shipping included??",
-    a: "YES!! Insured both ways, included in the price!! We e-mail you the pre-paid label after you order. KC Local is FREE pickup/dropoff!!",
+    a: "100% YES!! FREE insured shipping both ways -- baked right into the price, no add-ons. We e-mail you the pre-paid label the moment your payment goes through. KC Local skips shipping entirely with FREE pickup and drop-off!!",
+  },
+  {
+    q: "How do I pay??",
+    a: "Pay securely up front by credit or debit card at checkout -- powered by Stripe. We accept all major cards, Apple Pay, and Google Pay. The moment your payment lands, we e-mail you the prepaid shipping label and packing instructions!!",
+  },
+  {
+    q: "What if I change my mind?? Refunds??",
+    a: "FULL REFUND any time before we begin work on your frames!! Just shoot us an e-mail and we'll reverse the charge. Once work has started we handle refunds case-by-case -- but our lifetime workmanship warranty means we'll re-do anything that isn't right at no charge.",
   },
   {
     q: "Is this LEGAL??",
